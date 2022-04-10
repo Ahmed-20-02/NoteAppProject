@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AssignmentProj.ProfilePage" NavigationPage.HasNavigationBar="False" >
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor = "#520B00" Padding="24" CornerRadius="0">
+                <Label Text = "Profile" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <Label Text="ID"/>
+            <Entry x:Name="id" IsReadOnly="True" />
+            <Label Text="Name"/>
+            <Entry x:Name="name" IsReadOnly="True"/>
+            <Label Text="Username"/>
+            <Entry x:Name="username" IsReadOnly="True"/>
+            <Label Text="Change Password"/>
+            <Entry x:Name="password" Text="" Placeholder="Old Password" IsPassword="True"/>
+            <Entry x:Name="newPassword" Text="" Placeholder="New Password" IsPassword="True"/>
+            <Button x:Name="showOrHide" BackgroundColor="#520B00" Text="Show Passwords" Clicked="showPass" />
+            <Label x:Name="error" TextColor="Red"/>
+            <StackLayout Orientation="Horizontal">
+                <Button BackgroundColor="#520B00" Text="Home" Clicked="home" />
+                <Button BackgroundColor="#520B00" Text="Log Out" Clicked="logOut" />
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <Button BackgroundColor="#520B00" Text="Update Password" Clicked="updateAccount" />
+                <Button BackgroundColor="#520B00" Text="Delete Account" Clicked="deleteAccount" />
+            </StackLayout>
+           
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

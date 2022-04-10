@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AssignmentProj.CreateNote" NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <StackLayout>
+                    <Frame BackgroundColor = "#520B00" Padding="24" CornerRadius="0">
+                        <Label Text = "New Note" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+                    </Frame>
+                    <Entry BackgroundColor = "Black" Text="" x:Name="subject" Placeholder="Enter Subject" />
+                    <StackLayout>
+                        <Entry BackgroundColor = "Black" Text="" x:Name="content" Placeholder="Enter Note"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <CheckBox x:Name="checkBox" CheckedChanged="locationTicked"/>
+                        <Label BackgroundColor = "Black" Text="Location And Timestamp" />
+                    </StackLayout>
+                    <Label BackgroundColor = "Black" Text="Location And Timestamp Not Set" x:Name="readOnlyLocation"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Button BackgroundColor = "#520B00" Text="Select Photo"  Clicked="selectPhoto" Padding="15"/>
+                        <Button BackgroundColor = "#520B00" Text="Take Photo"  Clicked="takePhoto" Padding="15"/>
+                        <Button BackgroundColor = "#520B00" Text="Delete Photo"  Clicked="deletePhoto" Padding="15"/>
+                    </StackLayout>
+                    <Image x:Name="selectedPhoto" ScaleX="1" ScaleY="1"/>
+                    <Label x:Name="error" TextColor="Red"/>
+
+                </StackLayout>
+            </ScrollView>
+            <StackLayout Orientation="Horizontal">
+                <Button BackgroundColor = "#520B00" Text="Cancel" Clicked="cancel"  />
+                <Button BackgroundColor = "#520B00" Text="Create"  Clicked="save" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

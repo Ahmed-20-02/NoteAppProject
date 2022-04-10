@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AssignmentProj.Home" NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Button BackgroundColor="#520B00" Text="Profile" Clicked="profile" />
+            </StackLayout>
+            <Frame BackgroundColor="#520B00" Padding="24" CornerRadius="0">
+                <Label x:Name="helloMessage" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <StackLayout Orientation="Horizontal">
+                <SearchBar x:Name="searchBar" PlaceholderColor="Gray" BackgroundColor="Black" TextColor="White" CancelButtonColor="#520B00" Text="" MaxLength="15" Placeholder="Search For Note" TextChanged="searched" />
+            </StackLayout>
+            <Label x:Name="error" Text="" TextColor="Red"/>
+            <CollectionView BackgroundColor="#520B00" x:Name="notesList" SelectionMode="None">
+                <CollectionView.ItemTemplate IsItemSwipeEnabled="True" ItemSwipeCompleted="OnItemSwipeCompleted" ItemsSource="{Binding Source}">
+                    <DataTemplate>
+                        <StackLayout >
+                            <SwipeView>
+                                <SwipeView.LeftItems>
+                                    <SwipeItems Mode="Execute">
+                                        <SwipeItem Text="Delete" BackgroundColor="DarkRed" Invoked="onSwipeLeft" />
+                                    </SwipeItems>
+                                </SwipeView.LeftItems>
+                                <SwipeView.RightItems>
+                                    <SwipeItems Mode="Execute">
+                                        <SwipeItem Text="View" BackgroundColor="LightGreen" Invoked="onSwipeRight" />
+                                    </SwipeItems>
+                                </SwipeView.RightItems>
+                                <SwipeView.Content>
+                                    <StackLayout >
+                                        <Label Text="{Binding title}"/>
+                                        <Label Text="{Binding message}"/>
+                                        <Label Text="{Binding location}"/>
+                                        <Image Source="{Binding imagePath}"/>
+                                    </StackLayout>
+                                </SwipeView.Content>
+                            </SwipeView>
+                            <Label Text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button BackgroundColor="#520B00" Text="Create Note" Clicked="createNote" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
