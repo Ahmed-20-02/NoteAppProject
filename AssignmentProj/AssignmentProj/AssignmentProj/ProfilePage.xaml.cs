@@ -67,6 +67,7 @@ namespace AssignmentProj
             Preferences.Clear();
             var t = Task.Run(async delegate { notification.send($"{currentUser.userName}", "Account Deleted"); });
             await App.Database.DeleteUserAsync(currentUser);
+            await App.Database.DeleteAllUsersNotesAsync(currentUser.Id);
             currentUser = new User();
             await Navigation.PushAsync(new MainPage());
         }

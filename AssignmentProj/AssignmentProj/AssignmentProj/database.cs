@@ -34,6 +34,6 @@ namespace AssignmentProj
         public Task<int> DeleteNoteAsync(Note note)
         { return _dDConn.DeleteAsync(note); }
         public Task<int> DeleteAllUsersNotesAsync(int id)
-        { return _dDConn.ExecuteAsync($"DELETE FROM Note WHERE authorId = '{id}'"); }
+        { return _dDConn.ExecuteAsync($"DELETE FROM Note WHERE authorId='{id}'"); }
     }
 }
