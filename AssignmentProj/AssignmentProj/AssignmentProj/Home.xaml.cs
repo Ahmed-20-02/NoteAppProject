@@ -64,7 +64,7 @@ namespace AssignmentProj
                 foreach (Note note in usersNotes)
                 {
                     if (note.title.Contains(searchBar.Text) || note.message.Contains(searchBar.Text))
-                    { /*searchedNotes.Add(note);*/ searchedNotes.Add(note); }
+                    { searchedNotes.Add(note); }
                 }
                 if (searchedNotes.Count == 0) 
                 {
@@ -87,11 +87,6 @@ namespace AssignmentProj
                     usersNotes.Add(allNotes[i]);
                 }
             }
-            /*foreach (Note n in allNotes)
-            {
-                if (n.authorId == currentUser.Id)
-                { usersNotes.Add(n); }
-            }*/
             notesList.ItemsSource = usersNotes;
         } 
     }

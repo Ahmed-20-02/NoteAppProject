@@ -28,7 +28,6 @@ namespace AssignmentProj
             InitializeComponent();
             currentUser = user;
             notification = DependencyService.Get<ICustomNotification>();
-            NavigationPage.SetIconColor(this, Color.FromHex("#520B00"));
         }
         private async void cancel(object sender, EventArgs e)
         { await Navigation.PushAsync(new Home(currentUser)); }
@@ -36,15 +35,9 @@ namespace AssignmentProj
         {
             //VALIDATION
 
-            if (subject.Text == string.Empty || content.Text == string.Empty)
+            if (subject.Text == string.Empty || content.Text == string.Empty || subject.Text == "" || content.Text == "")
             {
-                error.Text = "Neither Fields Can Be Empty";
-                subject.Text = string.Empty;
-                content.Text = string.Empty;
-            }
-            else if (subject.Text == "" || content.Text == "")
-            {
-                error.Text = "Neither Fields Can Be Empty";
+                error.Text = "Fields Cannot Be Empty*";
                 subject.Text = string.Empty;
                 content.Text = string.Empty;
             }
@@ -76,7 +69,8 @@ namespace AssignmentProj
                     var locationVariable = await Geolocation.GetLocationAsync(
                     new GeolocationRequest(GeolocationAccuracy.Default, TimeSpan.FromMinutes(1)));
                     string[] formatLocation = locationVariable.ToString().Split(',');
-                    location = formatLocation[0] + " " + formatLocation[1] + " " + formatLocation[7];
+                    string[] formatTime = formatLocation[7].Split(' ');
+                    location = formatLocation[0] + " " + formatLocation[1] + " " + formatTime[1] + " " + formatTime[2] + " " + formatTime[3];
                     readOnlyLocation.Text = location;
                 }
                 catch (PermissionException)

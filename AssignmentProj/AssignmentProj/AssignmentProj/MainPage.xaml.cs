@@ -37,27 +37,21 @@ namespace AssignmentProj
         }
         private async void goToHomePage(object sender, EventArgs e)
         {
-            if (username.Text == string.Empty || password.Text == string.Empty)
+            if (username.Text == string.Empty || password.Text == string.Empty || username.Text == "" || password.Text == "")
             {
-                error.Text = "Neither Fields Can Be Empty";
-                username.Text = string.Empty;
-                password.Text = string.Empty;
-            }
-            else if (username.Text == "" || password.Text == "")
-            {
-                error.Text = "Neither Fields Can Be Empty";
+                error.Text = "Fields Cannot Be Empty*";
                 username.Text = string.Empty;
                 password.Text = string.Empty;
             }
             else if (username.Text.Length < 5)
             {
-                error.Text = "Username Length Cant Be Less Than 5 Characters Long";
+                error.Text = "Username Length Cannot Be Less Than 5 Characters Long*";
                 username.Text = string.Empty;
                 password.Text = string.Empty;
             }
             else if (password.Text.Length < 5)
             {
-                error.Text = "Password Length Cant Be Less Than 5 Characters Long";
+                error.Text = "Password Length Cannot Be Less Than 5 Characters Long*";
                 username.Text = string.Empty;
                 password.Text = string.Empty;
             }
@@ -74,7 +68,7 @@ namespace AssignmentProj
                     error.Text = "";
                     await Navigation.PushAsync(new Home(user));
                 }
-                else { error.Text = "User Not Found"; }
+                else { error.Text = "User Not Found*"; }
             }
         }
         protected override async void OnAppearing()

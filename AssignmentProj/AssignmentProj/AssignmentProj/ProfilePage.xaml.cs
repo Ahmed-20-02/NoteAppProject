@@ -21,12 +21,10 @@ namespace AssignmentProj
         {
             InitializeComponent();
             currentUser = user;
-            id.Text = currentUser.Id.ToString();
             name.Text = currentUser.name;
             username.Text = currentUser.userName;
 
             notification = DependencyService.Get<ICustomNotification>();
-            NavigationPage.SetIconColor(this, Color.FromHex("#520B00"));
         }
         
         private async void showPass(object sender, EventArgs e)
@@ -46,12 +44,14 @@ namespace AssignmentProj
         {  await Navigation.PushAsync(new Home(currentUser)); }
         private async void updateAccount(object sender, EventArgs e)
         {
-            if(password.Text != currentUser.password )//ADD RIGHT VALIDATION
-            { error.Text = "Password Does Not Match"; }
+            if (password.Text == string.Empty || newPassword.Text == string.Empty || password.Text == "" || newPassword.Text == "")
+            { error.Text = "Fields Cannot Be Empty*"; }
+            else if (password.Text != currentUser.password )
+            { error.Text = "Password Does Not Match*"; }
             else if(newPassword.Text.Length < 5 || newPassword.Text == "" || newPassword.Text == null || newPassword.Text == string.Empty)
-            { error.Text = "New Password Length Is Less Than 5 Characters"; }
+            { error.Text = "New Password Length Is Less Than 5 Characters*"; }
             else if(newPassword.Text == currentUser.password)
-            { error.Text = "New Password Must Differ From Old Password"; }
+            { error.Text = "New Password Must Differ From Old Password*"; }
             else  
             { 
                 currentUser.password = newPassword.Text;

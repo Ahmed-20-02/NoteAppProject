@@ -1,25 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AssignmentProj.MainPage" NavigationPage.HasNavigationBar="True"  NavigationPage.HasBackButton="False">
-   
-    <StackLayout>
-        <Frame BackgroundColor="#520B00" Padding="24" CornerRadius="0">
-            <Label Text="Log In" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Entry BackgroundColor="Black" x:Name="username" Text="" Placeholder="Enter Username" />
-        <StackLayout>
-            <Entry BackgroundColor="Black" x:Name="password" Text="" Placeholder="Enter Password" IsPassword="True"/>
+             x:Class="AssignmentProj.MainPage" NavigationPage.HasNavigationBar="True" NavigationPage.HasBackButton="False" BackgroundColor="#520B00">
+    
+    <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+        <Image Source="Note_AppLogo" WidthRequest="180" HeightRequest="180"/>
+        <Entry x:Name="username" HorizontalTextAlignment="Center"  Text="" Placeholder="Enter Username" WidthRequest="250" HorizontalOptions="Center"/>
+        <Entry x:Name="password" HorizontalTextAlignment="Center"  Text="" Placeholder="Enter Password" WidthRequest="250" HorizontalOptions="Center" IsPassword="True"/>
+        <Label x:Name="error" TextColor="White" HorizontalOptions="Center"/>
+        <Button x:Name="showOrHide" Text="Show Password" Clicked="showPass" TextColor="White" BackgroundColor="Transparent" 
+            VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="150" HeightRequest="35"  BorderColor="Black"
+            BorderWidth="2.5" CornerRadius="50"  />
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <CheckBox x:Name="saveLogIn" Color="Black"/>
+            <Label Text="Keep Me Logged In" TextColor="White" VerticalOptions="Center"/>
         </StackLayout>
-        <StackLayout Orientation="Horizontal">
-            <CheckBox x:Name="saveLogIn"/>
-            <Label Text="Keep Me Logged In" TextColor="White"/>
-        </StackLayout>
-        <Button x:Name="showOrHide" BackgroundColor="#520B00" Text="Show Password" Clicked="showPass" />
-        <Label x:Name="error" TextColor="Red"/>
-        <Button BackgroundColor="#520B00" Text="Log In" Clicked="goToHomePage" />
-        <Button BackgroundColor="#520B00" Text="Sign Up" Clicked="goToSignUp" />
 
+        <Button Text="Log In" Clicked="goToHomePage" TextColor="White" BackgroundColor="Transparent" BorderColor="Black"
+                VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="175" HeightRequest="50" 
+                BorderWidth="2.5" CornerRadius="50"   />
+
+        <Button Text="Sign Up" Clicked="goToSignUp" TextColor="White" BackgroundColor="Transparent" BorderColor="Black"
+                VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="175" HeightRequest="50"  
+                BorderWidth="2.5" CornerRadius="50"  />
     </StackLayout>
 
 </ContentPage>

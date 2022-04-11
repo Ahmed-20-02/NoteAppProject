@@ -1,41 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AssignmentProj.UpdateNote" NavigationPage.HasNavigationBar="True" NavigationPage.IconColor="White" NavigationPage.HasBackButton="True">
+             x:Class="AssignmentProj.UpdateNote" NavigationPage.HasNavigationBar="True" NavigationPage.IconColor="White" NavigationPage.HasBackButton="True" BackgroundColor="#520B00" >
     <ContentPage.Content>
         <StackLayout>
-            <ScrollView>
-                <StackLayout>
-                    <Frame BackgroundColor = "#520B00" Padding="24" CornerRadius="0">
-                        <Label Text = "New Note" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-                    </Frame>
-                    <Entry BackgroundColor = "Black" Text="" x:Name="subject" Placeholder="Enter Subject"/>
+            <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                <ScrollView>
                     <StackLayout>
-                        <Entry BackgroundColor = "Black" Text="" x:Name="content" Placeholder="Enter Note"/>
+                        <Frame BackgroundColor = "#520B00" Padding="24" CornerRadius="0" BorderColor="Black">
+                            <Label Text = "Update Note" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+                        </Frame>
+                        <Entry HorizontalTextAlignment="Center" Text="" x:Name="subject" Placeholder="Enter Subject" WidthRequest="250" HorizontalOptions="Center"/>
+                        <Entry HorizontalTextAlignment="Center" Text="" x:Name="content" Placeholder="Enter Note" WidthRequest="250" HorizontalOptions="Center"/>
+                        <Label x:Name="error" TextColor="White" HorizontalOptions="Center"/>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                            <CheckBox x:Name="checkBox" CheckedChanged="locationTicked"/>
+                            <Label TextColor="White" Text="Location And Timestamp" VerticalOptions="Center" />
+                        </StackLayout>
+                        <Label TextColor="White" Text="Location And Timestamp Not Set" x:Name="readOnlyLocation" HorizontalTextAlignment="Center" Padding="15">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="copyMapToClipboard" NumberOfTapsRequired="1"  />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Button x:Name="mapButton" Text="Go To Map" IsEnabled="false" Clicked="map" Padding="15" TextColor="White" BackgroundColor="Transparent" BorderColor="Black"
+                                    VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="125" HeightRequest="50" BorderWidth="2.5" CornerRadius="50" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                            <Button Text="Select Photo"  Clicked="selectPhoto" TextColor="White" BackgroundColor="Transparent" BorderColor="Black"
+                                    VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="125" HeightRequest="50" BorderWidth="2.5" CornerRadius="50" />
+                            <Button Text="Take Photo"  Clicked="takePhoto" TextColor="White" BackgroundColor="Transparent" BorderColor="Black"
+                                    VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="125" HeightRequest="50" BorderWidth="2.5" CornerRadius="50" />
+                            <Button Text="Delete Photo"  Clicked="deletePhoto" Padding="15" TextColor="White" BackgroundColor="Transparent" BorderColor="Black"
+                                    VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="125" HeightRequest="50" BorderWidth="2.5" CornerRadius="50" />
+                        </StackLayout>
+                        <Image x:Name="selectedPhoto" ScaleX="1" ScaleY="1"/>
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <CheckBox x:Name="checkBox" CheckedChanged="locationTicked"/>
-                        <Label BackgroundColor = "Black" Text="Location And Timestamp" />
-                    </StackLayout>
-                    <Label BackgroundColor = "Black" Text="Location And Timestamp Not Set" x:Name="readOnlyLocation">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="copyMapToClipboard" NumberOfTapsRequired="1"  />
-                        </Label.GestureRecognizers>
-                    </Label>
-                    <Button BackgroundColor = "#520B00" x:Name="mapButton" Text="Go To Map" IsEnabled="false" Clicked="map" Padding="15"/>
-                    <StackLayout Orientation="Horizontal">
-                        <Button BackgroundColor = "#520B00" Text="Select Photo"  Clicked="selectPhoto" Padding="15"/>
-                        <Button BackgroundColor = "#520B00" Text="Take Photo"  Clicked="takePhoto" Padding="15"/>
-                        <Button BackgroundColor = "#520B00" Text="Delete Photo"  Clicked="deletePhoto" Padding="15"/>
-                    </StackLayout>
-                    <Image x:Name="selectedPhoto" ScaleX="1" ScaleY="1"/>
-                    <Label x:Name="error" TextColor="Red"/>
+                </ScrollView>
+            </StackLayout>
 
-                </StackLayout>
-            </ScrollView>
-            <StackLayout Orientation="Horizontal">
-                <Button BackgroundColor = "#520B00" Text="Cancel" Clicked="cancel"  />
-                <Button BackgroundColor = "#520B00" Text="Update"  Clicked="save" />
+            <StackLayout Orientation="Horizontal" Padding="25" VerticalOptions="EndAndExpand">
+                <Button Text="Cancel" Clicked="cancel"  BackgroundColor="Transparent" BorderColor="Black"
+                            WidthRequest="175" HeightRequest="50" BorderWidth="2.5" CornerRadius="50" />
+                <Button Text="Update"  Clicked="save" BackgroundColor="Transparent" BorderColor="Black"
+                            WidthRequest="175" HeightRequest="50" BorderWidth="2.5" CornerRadius="50" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

@@ -1,24 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AssignmentProj.Home" NavigationPage.HasNavigationBar="True" NavigationPage.HasBackButton="False">
+             x:Class="AssignmentProj.Home" NavigationPage.HasNavigationBar="False" NavigationPage.HasBackButton="False" BackgroundColor="#520B00">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout>
-                <Button BackgroundColor="#520B00" Text="Profile" Clicked="profile" />
+            <StackLayout VerticalOptions="Center" Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="15">
+                <Image Source="Note_AppLogo" WidthRequest="100" HeightRequest="100"/>
+                <Button Text="Profile" Clicked="profile" TextColor="White" BackgroundColor="Transparent" BorderColor="Black"
+                VerticalOptions="Center" HorizontalOptions="EndAndExpand" WidthRequest="175" HeightRequest="50"
+                BorderWidth="2.5" CornerRadius="50" />
             </StackLayout>
             <Frame BackgroundColor="#520B00" Padding="24" CornerRadius="0">
                 <Label x:Name="helloMessage" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
             </Frame>
-            <StackLayout Orientation="Horizontal">
-                <SearchBar x:Name="searchBar" PlaceholderColor="Gray" BackgroundColor="Black" TextColor="White" CancelButtonColor="#520B00" Text="" MaxLength="15" Placeholder="Search For Note" TextChanged="searched" />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
+                <SearchBar x:Name="searchBar" PlaceholderColor="Gray" BackgroundColor="Black" TextColor="White" CancelButtonColor="White" Text="" MaxLength="15" Placeholder="Search For Note" TextChanged="searched" />
             </StackLayout>
-            <Label x:Name="error" Text="" TextColor="Red"/>
+            <Label x:Name="error" Text="" TextColor="White" HorizontalOptions="Center"/>
             <CollectionView BackgroundColor="#520B00" x:Name="notesList" SelectionMode="None">
                 <CollectionView.ItemTemplate IsItemSwipeEnabled="True" ItemSwipeCompleted="OnItemSwipeCompleted" ItemsSource="{Binding Source}">
                     <DataTemplate>
                         <StackLayout >
-                            <SwipeView>
+                            <SwipeView BackgroundColor="Black">
                                 <SwipeView.LeftItems>
                                     <SwipeItems Mode="Execute">
                                         <SwipeItem Text="Delete" BackgroundColor="Black" Invoked="onSwipeLeft" />
@@ -26,24 +29,27 @@
                                 </SwipeView.LeftItems>
                                 <SwipeView.RightItems>
                                     <SwipeItems Mode="Execute">
-                                        <SwipeItem Text="View" BackgroundColor="#520B00" Invoked="onSwipeRight" />
+                                        <SwipeItem Text="View" BackgroundColor="White" Invoked="onSwipeRight" />
                                     </SwipeItems>
                                 </SwipeView.RightItems>
                                 <SwipeView.Content>
                                     <StackLayout >
-                                        <Label Text="{Binding title}"/>
-                                        <Label Text="{Binding message}"/>
-                                        <Label Text="{Binding location}"/>
-                                        <Image Source="{Binding imagePath}"/>
+                                        <Label TextColor="White" HorizontalTextAlignment="Center" Padding="5" Text="{Binding title}"/>
+                                        <Label TextColor="White" HorizontalTextAlignment="Center" Padding="5" Text="{Binding message}"/>
+                                        <Label TextColor="White" HorizontalTextAlignment="Center" Padding="5" Text="{Binding location}"/>
+                                        <Image Source="{Binding imagePath}" Scale="1"/>
                                     </StackLayout>
                                 </SwipeView.Content>
                             </SwipeView>
-                            <Label Text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"/>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <Button BackgroundColor="#520B00" Text="Create Note" Clicked="createNote" />
+            <StackLayout Padding="15" >
+                <Button Text="Create Note" Clicked="createNote" Padding="15" TextColor="White" BackgroundColor="Transparent" BorderColor="Black"
+                        VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="125" HeightRequest="50" BorderWidth="2.5" CornerRadius="50"/>
+            </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -36,7 +36,6 @@ namespace AssignmentProj
             imagePath = currentNote.imagePath;
 
             notification = DependencyService.Get<ICustomNotification>();
-            NavigationPage.SetIconColor(this, Color.FromHex("#520B00"));
         }
         private async void cancel(object sender, EventArgs e)
         { await Navigation.PushAsync(new Home(currentUser)); }
@@ -45,21 +44,14 @@ namespace AssignmentProj
         {
             //VALIDATION
 
-            if (subject.Text == string.Empty || content.Text == string.Empty)
+            if (subject.Text == string.Empty || content.Text == string.Empty || subject.Text == "" || content.Text == "")
             {
-                error.Text = "Neither Fields Can Be Empty";
-                subject.Text = currentNote.title;
-                content.Text = currentNote.message;
-            }
-            else if (subject.Text == "" || content.Text == "")
-            {
-                error.Text = "Neither Fields Can Be Empty";
+                error.Text = "Fields Cannot Be Empty*";
                 subject.Text = currentNote.title;
                 content.Text = currentNote.message;
             }
             else
             {
-
                 currentNote.title = subject.Text;
                 currentNote.message = content.Text;
                 currentNote.location = location;
@@ -104,7 +96,7 @@ namespace AssignmentProj
                 string[] formatLocation = location.ToString().Split(' ');
 
                 await Clipboard.SetTextAsync(formatLocation[1] + " " + formatLocation[4]);
-                await DisplayAlert("Copied", "Use The Button Below To Go To Maps And Paste It", "Ok");
+                await DisplayAlert("Copied", "Use The Button Below To Go To Maps and Paste In The Search Box :)", "Ok");
             }
             else { await DisplayAlert("Can't Copy", "Location For This Note Is Empty, Set Location To Enable Copying And Enable Map Button", "Ok"); }
         }

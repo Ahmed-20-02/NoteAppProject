@@ -18,43 +18,37 @@ namespace AssignmentProj
         {
             InitializeComponent();
             notification = DependencyService.Get<ICustomNotification>();
-            NavigationPage.SetIconColor(this, Color.FromHex("#520B00"));
         }
         private async void signUp(object sender, EventArgs e)
         {
-            if (username.Text == string.Empty || password.Text == string.Empty || repeatPassword.Text == string.Empty)
+            if (username.Text == string.Empty || password.Text == string.Empty || repeatPassword.Text == string.Empty || username.Text == "" || password.Text == "" || repeatPassword.Text == "")
             {
-                error.Text = "Fields Cannot Be Empty";
+                error.Text = "Fields Cannot Be Empty*";
                 password.Text = string.Empty;
                 repeatPassword.Text = string.Empty;
             }
-            if (username.Text == "" || password.Text == "" || repeatPassword.Text == "")
-            {
-                error.Text = "Fields Cannot Be Empty";
-                password.Text = string.Empty;
-                repeatPassword.Text = string.Empty;
-            }
+
             else if (username.Text.Length < 5)
             {
-                error.Text = "Username Length Cant Be Less Than 5 Characters Long";
+                error.Text = "Username Length Cannot Be Less Than 5 Characters Long*";
                 password.Text = string.Empty;
                 repeatPassword.Text = string.Empty;
             }
             else if (name.Text.Length < 3)
             {
-                error.Text = "Name Length Cant Be Less Than 3 Characters Long";
+                error.Text = "Name Length Cannot Be Less Than 3 Characters Long*";
                 password.Text = string.Empty;
                 repeatPassword.Text = string.Empty;
             }
             else if (password.Text.Length < 5 && repeatPassword.Text == password.Text)
             {
-                error.Text = "Password Length Cant Be Less Than 5 Characters Long";
+                error.Text = "Password Length Cannot Be Less Than 5 Characters Long*";
                 password.Text = string.Empty;
                 repeatPassword.Text = string.Empty;
             }
             else if (repeatPassword.Text != password.Text)
             {
-                error.Text = "Passwords Must Match";
+                error.Text = "Passwords Must Match*";
                 password.Text = string.Empty;
                 repeatPassword.Text = string.Empty;
             }
@@ -75,7 +69,7 @@ namespace AssignmentProj
                     await Navigation.PushAsync(new MainPage());
                 }
                 else
-                { error.Text = "Username already exists"; }
+                { error.Text = "Username already exists*"; }
             }
         }
 
