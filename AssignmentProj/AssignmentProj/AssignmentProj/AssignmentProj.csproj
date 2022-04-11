@@ -18,19 +18,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="CreateNote.xaml">
+    <EmbeddedResource Update="Pages\CreateNote.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Home.xaml">
+    <EmbeddedResource Update="Pages\Home.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ProfilePage.xaml">
+    <EmbeddedResource Update="Pages\ProfilePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="UpdateNote.xaml">
+    <EmbeddedResource Update="Pages\UpdateNote.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="UserSignUp.xaml">
+    <EmbeddedResource Update="Pages\UserSignUp.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>
