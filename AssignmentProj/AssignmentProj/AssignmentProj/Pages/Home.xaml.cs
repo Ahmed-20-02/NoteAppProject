@@ -87,6 +87,8 @@ namespace AssignmentProj
                     usersNotes.Add(allNotes[i]);
                 }
             }
+            if (usersNotes.Count() == 0)
+            { error.Text = "You Have No Saved Notes"; }
             notesList.ItemsSource = usersNotes;
         } 
     }
