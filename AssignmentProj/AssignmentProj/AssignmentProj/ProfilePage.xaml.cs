@@ -26,9 +26,8 @@ namespace AssignmentProj
             username.Text = currentUser.userName;
 
             notification = DependencyService.Get<ICustomNotification>();
+            NavigationPage.SetIconColor(this, Color.FromHex("#520B00"));
         }
-        //DISABLE BACK BUTTON. USE ON EACH PAGE IF NO FIX
-        /*protected override bool OnBackButtonPressed() { return false; }*/
         
         private async void showPass(object sender, EventArgs e)
         {

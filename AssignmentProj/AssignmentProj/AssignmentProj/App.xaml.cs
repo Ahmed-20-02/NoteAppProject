@@ -25,7 +25,8 @@ namespace AssignmentProj
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new MainPage())
+            { BarBackgroundColor = Color.White };
         }
 
         protected override void OnStart()

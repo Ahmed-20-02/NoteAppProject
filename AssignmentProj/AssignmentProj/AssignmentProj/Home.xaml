@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AssignmentProj.Home" NavigationPage.HasNavigationBar="False">
+             x:Class="AssignmentProj.Home" NavigationPage.HasNavigationBar="True" NavigationPage.HasBackButton="False">
     <ContentPage.Content>
         <StackLayout>
             <StackLayout>
@@ -21,12 +21,12 @@
                             <SwipeView>
                                 <SwipeView.LeftItems>
                                     <SwipeItems Mode="Execute">
-                                        <SwipeItem Text="Delete" BackgroundColor="DarkRed" Invoked="onSwipeLeft" />
+                                        <SwipeItem Text="Delete" BackgroundColor="Black" Invoked="onSwipeLeft" />
                                     </SwipeItems>
                                 </SwipeView.LeftItems>
                                 <SwipeView.RightItems>
                                     <SwipeItems Mode="Execute">
-                                        <SwipeItem Text="View" BackgroundColor="LightGreen" Invoked="onSwipeRight" />
+                                        <SwipeItem Text="View" BackgroundColor="#520B00" Invoked="onSwipeRight" />
                                     </SwipeItems>
                                 </SwipeView.RightItems>
                                 <SwipeView.Content>

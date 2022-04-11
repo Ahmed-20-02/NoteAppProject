@@ -18,6 +18,7 @@ namespace AssignmentProj
         {
             InitializeComponent();
             notification = DependencyService.Get<ICustomNotification>();
+            NavigationPage.SetIconColor(this, Color.FromHex("#520B00"));
         }
         private async void signUp(object sender, EventArgs e)
         {

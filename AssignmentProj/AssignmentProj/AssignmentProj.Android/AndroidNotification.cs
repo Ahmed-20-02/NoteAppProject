@@ -40,8 +40,8 @@ namespace AssignmentProj.Droid
 
                 .SetContentTitle(title)
                 .SetContentText(message)
-                .SetLargeIcon(BitmapFactory.DecodeResource(Android.App.Application.Context.Resources, Resource.Drawable.appLogo))
-                .SetSmallIcon(Resource.Drawable.appLogo)
+                .SetLargeIcon(BitmapFactory.DecodeResource(Android.App.Application.Context.Resources, Resource.Drawable.NoteAppLogo))
+                .SetSmallIcon(Resource.Drawable.NoteAppLogo)
                 .SetPriority((int)NotificationPriority.High)
                 .SetVisibility((int)NotificationVisibility.Public)
                 .SetDefaults((int)NotificationDefaults.Sound | (int)NotificationDefaults.Vibrate);

@@ -28,6 +28,7 @@ namespace AssignmentProj
             InitializeComponent();
             currentUser = user;
             notification = DependencyService.Get<ICustomNotification>();
+            NavigationPage.SetIconColor(this, Color.FromHex("#520B00"));
         }
         private async void cancel(object sender, EventArgs e)
         { await Navigation.PushAsync(new Home(currentUser)); }

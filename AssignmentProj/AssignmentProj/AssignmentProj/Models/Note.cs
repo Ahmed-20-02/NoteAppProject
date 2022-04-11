@@ -14,6 +14,5 @@ namespace AssignmentProj
         public string message { get; set; }
         public string location { get; set; } = string.Empty;
         public string imagePath { get; set; } = string.Empty;
-        //varbinary in database
     }
 }
