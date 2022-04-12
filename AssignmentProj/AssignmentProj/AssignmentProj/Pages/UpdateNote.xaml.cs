@@ -75,7 +75,8 @@ namespace AssignmentProj
                     var locationVariable = await Geolocation.GetLocationAsync(
                     new GeolocationRequest(GeolocationAccuracy.Default, TimeSpan.FromMinutes(1)));
                     string[] formatLocation = locationVariable.ToString().Split(',');
-                    location = formatLocation[0] + " " + formatLocation[1] + " " + formatLocation[7];
+                    string[] formatTime = formatLocation[7].Split(' ');
+                    location = formatLocation[0] + " " + formatLocation[1] + " " + formatTime[1] + " " + formatTime[2] + " " + formatTime[3];
                     readOnlyLocation.Text = location;
                     mapButton.IsEnabled = true;
                 }
