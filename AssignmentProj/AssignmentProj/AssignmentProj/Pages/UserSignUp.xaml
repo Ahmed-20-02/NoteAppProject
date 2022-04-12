@@ -5,8 +5,8 @@
     <ContentPage.Content>
         <StackLayout x:Name="stackLayout" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
             <Image Source="Note_AppLogo" WidthRequest="180" HeightRequest="180"/>
-            <Entry Text="" HorizontalTextAlignment="Center" x:Name="name" Placeholder="Enter Your Name" WidthRequest="250" HorizontalOptions="Center"/>
-            <Entry Text="" HorizontalTextAlignment="Center" x:Name="username" Placeholder="Enter Username" WidthRequest="250" HorizontalOptions="Center"/>
+            <Entry MaxLength="12" Text="" HorizontalTextAlignment="Center" x:Name="name" Placeholder="Enter Your Name" WidthRequest="250" HorizontalOptions="Center"/>
+            <Entry MaxLength="12" Text="" HorizontalTextAlignment="Center" x:Name="username" Placeholder="Enter Username" WidthRequest="250" HorizontalOptions="Center"/>
             <Entry Text="" HorizontalTextAlignment="Center" x:Name="password" Placeholder="Enter Password" WidthRequest="250" HorizontalOptions="Center" IsPassword="True"/>
             <Entry Text="" HorizontalTextAlignment="Center" x:Name="repeatPassword" Placeholder="Enter Password Again" WidthRequest="250" HorizontalOptions="Center" IsPassword="True"/>
             <Label x:Name="error" TextColor="White" HorizontalOptions="Center"/>

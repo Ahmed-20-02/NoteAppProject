@@ -5,7 +5,7 @@
     
     <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
         <Image Source="Note_AppLogo" WidthRequest="180" HeightRequest="180"/>
-        <Entry x:Name="username" HorizontalTextAlignment="Center"  Text="" Placeholder="Enter Username" WidthRequest="250" HorizontalOptions="Center"/>
+        <Entry MaxLength="12" x:Name="username" HorizontalTextAlignment="Center"  Text="" Placeholder="Enter Username" WidthRequest="250" HorizontalOptions="Center"/>
         <Entry x:Name="password" HorizontalTextAlignment="Center"  Text="" Placeholder="Enter Password" WidthRequest="250" HorizontalOptions="Center" IsPassword="True"/>
         <Label x:Name="error" TextColor="White" HorizontalOptions="Center"/>
         <Button x:Name="showOrHide" Text="Show Password" Clicked="showPass" TextColor="White" BackgroundColor="Transparent" 
