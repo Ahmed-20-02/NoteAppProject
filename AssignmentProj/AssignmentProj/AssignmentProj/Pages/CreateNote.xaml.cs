@@ -12,6 +12,28 @@ using Xamarin.Forms.Xaml;
 
 namespace AssignmentProj
 {
+    /// <UNIT TEST 3>
+    // Arrange creating note
+    // Arranged ticking location checkbox, take picture and fill input box after installing app and creating new account
+
+    // Act
+    // Try ticking checkbox, take picture and fill input box then click "save"
+
+    // Assert
+    //  Expect ticking checkbox to produce a location permission request
+    //  Expect clicking take picture to produce a camera permission request
+    //  Expect allowing location permission to gather my location and display it
+    //  Expect allowing camera permission to open native camera app and display image once taken
+    //  Expect redirect to home page once "save" clicked, notification and note created is displayed as latest note
+
+    // Result
+    //  ticking the checkbox causes permission pop up
+    //  clicking on camera button causes permissin pop up
+    //  allowing location permission gathers my location and display it
+    //  allowing camera permission opens my native camera app and display image once i take a picture
+    //  clicking "save" directs me to homepage with note showing as first note and notification with note subject shown
+    /// </UNIT TEST 3>
+
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CreateNote : ContentPage
     {
@@ -33,8 +55,6 @@ namespace AssignmentProj
         { await Navigation.PushAsync(new Home(currentUser)); }
         private async void save(object sender, EventArgs e)
         {
-            //VALIDATION
-
             if (subject.Text == string.Empty || content.Text == string.Empty || subject.Text == "" || content.Text == "")
             {
                 error.Text = "Fields Cannot Be Empty*";
@@ -55,7 +75,6 @@ namespace AssignmentProj
                 selectedPhoto.Source = null;
                 photofilename = null;
                 imagePath = null;
-              //  await DisplayAlert("Memory Created Successfully", "I Hope It Was A Happy One :)", "Return Home");
                 await Navigation.PushAsync(new Home(currentUser));
                     
             }

@@ -9,6 +9,26 @@ using Xamarin.Forms;
 
 namespace AssignmentProj
 {
+    /// <UNIT TEST 2>
+    // Arrange logging in
+    // Arranged usernames, " ", "Ben", "Benjamin", "Ahmed22"
+    // after creating user with username "Ahmed22"
+
+    // Act
+    // Try all usernames with valid password length
+
+    // Assert
+    //  Expect " " to force empty username error
+    //  Expect "Ben" to force username length error
+    //  Expect "Benjamin" to force username not found error
+    //  Expect "Ahmed22" to force username not found error - With password "Ahmed22" app directs to home page and produces notification
+
+    // Result
+    //  " " forces empty username error
+    //  "Ben" forces username length error
+    //  "Benjamin" forces username not found error
+    //  "Ahmed22" forces username not found error - With password "Ahmed22" app directed me to home page and notified me that "Ahmed22" logged In
+    /// </UNIT TEST 2>
     public partial class MainPage : ContentPage
     {
         ICustomNotification notification;

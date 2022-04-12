@@ -9,6 +9,46 @@ using Xamarin.Forms.Xaml;
 
 namespace AssignmentProj
 {
+    /// <UNIT TEST 4>
+    // Arrange searching for note
+    // Arranged words " ", "x" ,"Te", "Test", "Testing" after creating note with subject "Test"
+
+    // Act
+    // Inputing words into search box
+
+    // Assert
+    //  Expect " " to display all notes
+    //  Expect "x" to display no notes found error message
+    //  Expect "Te" to display note containing text "Test" in either subject or message
+    //  Expect "Test" to display note containing text "Test" in either subject or message
+    //  Expect "Testing" to display no notes found error message
+
+    // Result
+    //  " " displays all notes
+    //  "x" display no notes found error message
+    //  "Te" displays note containing text "Test" in subject
+    //  "Test" displays note containing text "Test" in subject
+    //  "Testing" displays no notes found error message
+    /// </UNIT TEST 4>
+
+    /// <UNIT TEST 6>
+    // Arrange searching for note
+    // Arranged swiping right and swiping left on note
+
+    // Act
+    // swiping note right then swiping note left
+
+    // Assert
+    //  Expect swiping right to direct me to update note page with all note information displayed
+    //  Expect swiping left to delete note, no longer display note in note list and notify me that the note was deleted
+
+    // Result
+    //  swipe right directed me to update page and displayed the information from the note
+    //  swipe left deleted the note, notified me with the deleted note notification and list of notes no longer displays it
+
+    /// </UNIT TEST 6>
+
+
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Home : ContentPage
     {

@@ -34,9 +34,9 @@
                                 </SwipeView.RightItems>
                                 <SwipeView.Content>
                                     <StackLayout >
-                                        <Label TextColor="White" HorizontalTextAlignment="Center" Padding="5" Text="{Binding title}"/>
-                                        <Label TextColor="White" HorizontalTextAlignment="Center" Padding="5" Text="{Binding message}"/>
-                                        <Label TextColor="White" HorizontalTextAlignment="Center" Padding="5" Text="{Binding location}"/>
+                                        <Label TextColor="White" HorizontalTextAlignment="Center" Padding="5" Text="{Binding title}" FontSize="Title"/>
+                                        <Label TextColor="White" HorizontalTextAlignment="Center" Padding="5" Text="{Binding message}" FontSize="Body"/>
+                                        <Label TextColor="White" HorizontalTextAlignment="Center" Padding="5" Text="{Binding location}" FontSize="Small"/>
                                         <Image Source="{Binding imagePath}" Scale="1"/>
                                     </StackLayout>
                                 </SwipeView.Content>

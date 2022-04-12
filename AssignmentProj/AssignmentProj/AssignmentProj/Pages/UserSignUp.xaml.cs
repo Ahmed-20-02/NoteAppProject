@@ -8,6 +8,27 @@ using Xamarin.Forms.Xaml;
 
 namespace AssignmentProj
 {
+    /// <UNIT TEST 1>
+    // Arrange signing up
+    // Arranged usernames, " ", "Ben", "Benjamin", "Ahmed22"
+    // after creating user with username "Ahmed22"
+
+    // Act
+    // Try all usernames with valid name, valid password length and passwords match
+
+    // Assert
+    //  Expect " " to force empty username error
+    //  Expect "Ben" to force username length error
+    //  Expect "Benjamin" to direct me to log in page and produce a notification
+    //  Expect "Ahmed22" to force username already exists error
+
+    // Result
+    //  " " forces empty username error
+    //  "Ben" forces username length error
+    //  "Benjamin" directed me to log in page and notified me that "Ahmed22" account created
+    //  "Ahmed22" forces username already exists error
+    /// </UNIT TEST 1>
+
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UserSignUp : ContentPage
     {
@@ -45,7 +66,6 @@ namespace AssignmentProj
                 password.Text = string.Empty;
                 repeatPassword.Text = string.Empty;
             }
-            
             else if (password.Text.Length < 5 && repeatPassword.Text == password.Text)
             {
                 error.Text = "Password Length Cannot Be Less Than 5 Characters Long*";

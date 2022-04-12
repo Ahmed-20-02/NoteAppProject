@@ -10,6 +10,27 @@ using Xamarin.Forms.Xaml;
 
 namespace AssignmentProj
 {
+    /// <UNIT TEST 5>
+    // Arrange updating note
+    // Arranged updating note by clicking location checkbox and delete picture after
+    // creating note with location enabled and image attached
+
+    // Act
+    // removing tick from checkbox, removing image and clicking "update"
+
+    // Assert
+    //  Expect removing tick from checkbox to remove the displayed location information
+    //  Expect clicking "Delete Image" to remove the displayed image
+    //  Expect clicking "Update" to redirect to home screen, show note updated notification
+    //  and display note with "location and timestamp not set" with no image attached
+
+    // Result
+    //  removing tick from checkbox removes the displayed location information
+    //  clicking "delete image" removes the displayed image
+    //  clicking "update" redirects me to home screen, notifies me that note has updated
+    //  and displays the note with "location and timestamp not set" with no image attached
+    /// </UNIT TEST 5>
+
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UpdateNote : ContentPage
     {
@@ -42,8 +63,6 @@ namespace AssignmentProj
 
         private async void save(object sender, EventArgs e)
         {
-            //VALIDATION
-
             if (subject.Text == string.Empty || content.Text == string.Empty || subject.Text == "" || content.Text == "")
             {
                 error.Text = "Fields Cannot Be Empty*";
@@ -58,7 +77,6 @@ namespace AssignmentProj
                 currentNote.imagePath = imagePath;
                 await App.Database.UpdateNoteAsync(currentNote);
                 var t = Task.Run(async delegate { notification.send($"{currentNote.title}", "Note Updated"); });
-                //  await DisplayAlert("Memory Updated Successfully", "Success", "Return Home");
                 await Navigation.PushAsync(new Home(currentUser));
 
                 selectedPhoto.Source = null;
@@ -160,7 +178,6 @@ namespace AssignmentProj
                 PhotoPath = null;
                 return;
             }
-            // save the file into local storage
             var newFile = Path.Combine(FileSystem.AppDataDirectory, photo.FileName);
             using (var stream = await photo.OpenReadAsync())
             using (var newStream = File.OpenWrite(newFile))
