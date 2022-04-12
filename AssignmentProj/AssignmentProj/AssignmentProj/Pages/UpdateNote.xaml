@@ -10,7 +10,7 @@
                         <Frame BackgroundColor = "#520B00" Padding="24" CornerRadius="0" BorderColor="Black">
                             <Label Text = "Update Note" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
                         </Frame>
-                        <Entry MaxLength="20" HorizontalTextAlignment="Center" Text="" x:Name="subject" Placeholder="Enter Subject" WidthRequest="250" HorizontalOptions="Center"/>
+                        <Entry MaxLength="25" HorizontalTextAlignment="Center" Text="" x:Name="subject" Placeholder="Enter Subject" WidthRequest="250" HorizontalOptions="Center"/>
                         <Entry HorizontalTextAlignment="Center" Text="" x:Name="content" Placeholder="Enter Note" WidthRequest="250" HorizontalOptions="Center"/>
                         <Label x:Name="error" TextColor="White" HorizontalOptions="Center"/>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
