@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using Xamarin.Forms;
 
+//https://youtu.be/G2TTote5pcI
 //https://github.com/ichim/xamarin.forms/blob/master/Notification/Not/Not.Android/AndroidNotification.cs
 
 [assembly: Dependency(typeof(AssignmentProj.Droid.AndroidNotification))]

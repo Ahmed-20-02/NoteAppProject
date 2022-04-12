@@ -14,7 +14,7 @@
                         <Entry HorizontalTextAlignment="Center" Text="" x:Name="content" Placeholder="Enter Note" WidthRequest="250" HorizontalOptions="Center"/>
                         <Label x:Name="error" TextColor="White" HorizontalOptions="Center"/>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                            <CheckBox x:Name="checkBox" CheckedChanged="locationTicked"/>
+                            <CheckBox x:Name="checkBox" IsChecked="true" CheckedChanged="locationTicked"/>
                             <Label TextColor="White" Text="Location And Timestamp" VerticalOptions="Center" />
                         </StackLayout>
                         <Label TextColor="White" Text="Location And Timestamp Not Set" x:Name="readOnlyLocation" HorizontalTextAlignment="Center" Padding="15">
@@ -22,7 +22,7 @@
                                 <TapGestureRecognizer Tapped="copyMapToClipboard" NumberOfTapsRequired="1"  />
                             </Label.GestureRecognizers>
                         </Label>
-                        <Button x:Name="mapButton" Text="Go To Map" IsEnabled="false" Clicked="map" Padding="15" TextColor="White" BackgroundColor="Transparent" BorderColor="Black"
+                        <Button x:Name="mapButton" Text="Go To Map" IsEnabled="True" Clicked="map" Padding="15" TextColor="White" BackgroundColor="Transparent" BorderColor="Black"
                                     VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="125" HeightRequest="50" BorderWidth="2.5" CornerRadius="50" />
                         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                             <Button Text="Select Photo"  Clicked="selectPhoto" TextColor="White" BackgroundColor="Transparent" BorderColor="Black"

@@ -63,7 +63,7 @@ namespace AssignmentProj
                 List<Note> searchedNotes = new List<Note>();
                 foreach (Note note in usersNotes)
                 {
-                    if (note.title.Contains(searchBar.Text) || note.message.Contains(searchBar.Text))
+                    if (note.title.ToUpper().Contains(searchBar.Text.ToUpper()) || note.message.ToUpper().Contains(searchBar.Text.ToUpper()))
                     { searchedNotes.Add(note); }
                 }
                 if (searchedNotes.Count == 0) 

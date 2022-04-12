@@ -27,7 +27,6 @@ namespace AssignmentProj
                 password.Text = string.Empty;
                 repeatPassword.Text = string.Empty;
             }
-
             else if (username.Text.Length < 5)
             {
                 error.Text = "Username Length Cannot Be Less Than 5 Characters Long*";
@@ -40,6 +39,13 @@ namespace AssignmentProj
                 password.Text = string.Empty;
                 repeatPassword.Text = string.Empty;
             }
+            else if (!name.Text.All(char.IsLetter))
+            {
+                error.Text = "Name Cannot Contain Numbers Or Symbols*";
+                password.Text = string.Empty;
+                repeatPassword.Text = string.Empty;
+            }
+            
             else if (password.Text.Length < 5 && repeatPassword.Text == password.Text)
             {
                 error.Text = "Password Length Cannot Be Less Than 5 Characters Long*";

@@ -29,8 +29,8 @@ namespace AssignmentProj
             currentUser = user;
             subject.Text = currentNote.title;
             content.Text = currentNote.message;
-            if(currentNote.location != "Location And Timestamp Not Set")
-            { checkBox.IsChecked = true; mapButton.IsEnabled = true; }
+            if(currentNote.location == "Location And Timestamp Not Set")
+            { checkBox.IsChecked = false; mapButton.IsEnabled = false;}
             readOnlyLocation.Text = currentNote.location;
             selectedPhoto.Source = currentNote.imagePath;
             imagePath = currentNote.imagePath;
