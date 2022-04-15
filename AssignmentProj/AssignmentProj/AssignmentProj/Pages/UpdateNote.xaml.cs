@@ -57,6 +57,7 @@ namespace AssignmentProj
             //THIS LINE OF CODE
             location = currentNote.location;
             //RIGHT HERE
+            //I WANT TO CRY
 
             selectedPhoto.Source = currentNote.imagePath;
             imagePath = currentNote.imagePath;
