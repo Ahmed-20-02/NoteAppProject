@@ -59,7 +59,6 @@ namespace AssignmentProj
             //RIGHT HERE
 
             selectedPhoto.Source = currentNote.imagePath;
-            location = currentNote.location;
             imagePath = currentNote.imagePath;
 
             notification = DependencyService.Get<ICustomNotification>();
