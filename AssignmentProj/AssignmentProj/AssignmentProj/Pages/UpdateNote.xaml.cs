@@ -53,7 +53,13 @@ namespace AssignmentProj
             if(currentNote.location == "Location And Timestamp Not Set")
             { checkBox.IsChecked = false; mapButton.IsEnabled = false;}
             readOnlyLocation.Text = currentNote.location;
+            
+            //THIS LINE OF CODE
+            location = currentNote.location;
+            //RIGHT HERE
+
             selectedPhoto.Source = currentNote.imagePath;
+            location = currentNote.location;
             imagePath = currentNote.imagePath;
 
             notification = DependencyService.Get<ICustomNotification>();
